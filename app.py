@@ -6,7 +6,7 @@ import PyPDF2
 import docx
 import json
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='.')
 app.secret_key = "career_pilot_secret"
 Base.metadata.create_all(bind=engine)
 
