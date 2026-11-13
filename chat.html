@@ -1,0 +1,25 @@
+{% extends "basic.html" %} {% block content %}
+<div class="card" style="margin-top: 50px; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: white;">
+    <h2 style="color: #1a202c; margin-bottom: 20px;">AI Career Chat</h2>
+
+    <div class="chat-display" style="background: #f7fafc; padding: 20px; border-radius: 10px; min-height: 250px; max-height: 400px; overflow-y: auto; margin-bottom: 20px; border: 1px solid #e2e8f0;">
+        {% if response %}
+            <div style="margin-bottom: 15px;">
+                <span style="font-weight: bold; color: #2d3748;">Bot:</span>
+                <p style="color: #4a5568; line-height: 1.6; margin-top: 5px;">{{ response }}</p>
+            </div>
+        {% else %}
+            <p style="color: #a0aec0; text-align: center; margin-top: 100px;">Career se juda koi bhi sawal puchein (e.g., "Python kaise sikhu?")</p>
+        {% endif %}
+    </div>
+
+    <form method="POST" style="display: flex; gap: 10px;">
+        <input type="text" name="query" placeholder="Sawal type karein..." required
+                style="flex: 1; padding: 12px; border: 1px solid #cbd5e0; border-radius: 8px; outline: none;">
+        <button type="submit"
+                style="padding: 12px 25px; background-color: #3182ce; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+            Ask
+        </button>
+    </form>
+</div>
+{% endblock %}
